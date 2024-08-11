@@ -1,22 +1,40 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
-import 'package:ui/BlogsPage.dart';
-import 'package:ui/ChallengesPage.dart';
-import 'package:ui/CommuntyPage.dart';
-import 'package:ui/CoursesPage.dart';
-import 'package:ui/GuidesPage.dart';
-import 'package:ui/ProgramsPage.dart';
-import 'package:ui/ProjectsPage.dart';
-import 'package:ui/profile.dart';
+import 'package:CTE/BlogsPage.dart';
+import 'package:CTE/ChallengesPage.dart';
+import 'package:CTE/CommuntyPage.dart';
+import 'package:CTE/CoursesPage.dart';
+import 'package:CTE/GuidesPage.dart';
+import 'package:CTE/ProgramsPage.dart';
+import 'package:CTE/ProjectsPage.dart';
+import 'package:CTE/profile.dart';
+import 'package:getwidget/getwidget.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required course});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+//
+
+// Then you can use it like this:
+
+  //
+  void launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'الرابط لا يعمل  $url';
+    }
+  }
+//
+
   //متغير حتى نتوجه الى صفحة البروفايل
   int _currentIndex = 0;
 
@@ -29,21 +47,46 @@ class _HomePageState extends State<HomePage> {
           children: [
             Row(
               children: [
+                Container(
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                ),
                 Expanded(
-                    child: TextFormField(
-                  decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search_rounded),
-                      hintText: "Search",
-                      border: InputBorder.none,
-                      fillColor: Colors.grey[200],
-                      filled: true),
-                )),
-                Padding(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Icon(
-                      Icons.menu_open_rounded,
-                      size: 50,
-                    ))
+                  child: SizedBox(
+                    width: 30,
+                  ),
+                ),
+
+                Text('C T E',
+                    style: GoogleFonts.dosis(
+                        fontSize: 50, fontWeight: FontWeight.bold)),
+                Padding(padding: EdgeInsets.all(10)),
+                Expanded(
+                  child: SizedBox(
+                    width: 30,
+                  ),
+                ),
+
+                //Image.asset('3.png',),??? ترهم صورة ؟
+
+                // Expanded(
+                //   child: TextFormField(
+                //     decoration: InputDecoration(
+                //         prefixIcon: Icon(Icons.search_rounded),
+                //         hintText: "Search",
+                //         border: InputBorder.none,
+                //         fillColor: Colors.grey[200],
+                //         filled: true),
+                //     cursorColor: Colors.orange,
+                //   ),
+                // ),
+                // Padding(
+                //   padding: EdgeInsets.only(left: 10),
+                //   child: Icon(
+                //     Icons.menu_open_rounded,
+                //     size: 50,
+                //   ),
+                // ),
               ],
             ),
             Container(height: 10),
@@ -289,7 +332,7 @@ class _HomePageState extends State<HomePage> {
               margin: EdgeInsets.all(10),
               child: Text(
                 "Best Articles",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
               ),
             ),
             GridView(
@@ -297,134 +340,26 @@ class _HomePageState extends State<HomePage> {
               shrinkWrap: true,
               gridDelegate:
                   SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-              children: [
-                Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 144,
-                        width: 155,
-                        child: Image.asset("images/6.png"),
-                      ),
-                      Container(
-                        color: Colors.amber,
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 143,
-                        width: 155,
-                        decoration: BoxDecoration(),
-                        child: Image.asset("images/5.png"),
-                      ),
-                      Container(
-                        color: Colors.amber,
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 143,
-                        width: 155,
-                        child: Image.asset("images/3.png"),
-                      ),
-                      Container(
-                        color: Colors.amber,
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 143,
-                        width: 155,
-                        child: Image.asset("images/6.png"),
-                      ),
-                      Container(
-                        color: Colors.amber,
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 143,
-                        width: 155,
-                        child: Image.asset("images/5.png"),
-                      ),
-                      Container(
-                        color: Colors.amber,
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 143,
-                        width: 155,
-                        child: Image.asset("images/5.png"),
-                      ),
-                      Container(
-                        color: Colors.amber,
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 143,
-                        width: 155,
-                        child: Image.asset("images/4.png"),
-                      ),
-                      Container(
-                        color: Colors.amber,
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 143,
-                        width: 155,
-                        child: Image.asset("images/3.png"),
-                      ),
-                      Container(
-                        color: Colors.amber,
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 143,
-                        width: 155,
-                        child: Image.asset("images/5.png"),
-                      ),
-                      Container(
-                        color: Colors.amber,
-                      ),
-                    ],
-                  ),
-                ),
+              children: <Widget>[
+                CategoryAccordion(
+                    title: 'الذكاء الاصطناعي ',
+                    url:
+                        'https://www.oracle.com/ae-ar/artificial-intelligence/what-is-ai/',
+                    icon: Icons.webhook_rounded),
+                CategoryAccordion(
+                    title: ' الامن السيبراني  ',
+                    url:
+                        'https://www.sfahat.com/article/42/%D8%A7%D9%84%D8%A3%D9%85%D9%86-%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-cybersecurity-%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D9%87-%D8%A3%D8%B7%D8%B1-%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81-%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%A7%D8%AA%D8%A8%D9%87%D8%A7',
+                    icon: Icons.security_rounded),
+                CategoryAccordion(
+                    title: ' الفايربايس   ',
+                    url:
+                        'https://www.sfahat.com/article/42/%D8%A7%D9%84%D8%A3%D9%85%D9%86-%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-cybersecurity-%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D9%87-%D8%A3%D8%B7%D8%B1-%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81-%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%A7%D8%AA%D8%A8%D9%87%D8%A7',
+                    icon: Icons.whatshot_rounded),
+                CategoryAccordion(
+                    title: ' المعالج   ',
+                    url: 'https://aws.amazon.com/ar/what-is/cpu/',
+                    icon: Icons.account_tree_rounded),
               ],
             ),
             BottomNavigationBar(
@@ -433,12 +368,34 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   _currentIndex = index;
                 });
-                if (index == 2) {
-                  // Index of the Profile button
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ProfilePage()),
-                  );
+                switch (index) {
+                  case 0:
+                    // Index of the Home button
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HomePage(
+                                course: null,
+                              )),
+                    );
+                    break;
+                  case 1:
+                    // Index of the Settings button
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CommuntyPage()),
+                    );
+                    break;
+                  case 2:
+                    // Index of the Profile button
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProfilePage()),
+                    );
+                    break;
+                  default:
+                    // Handle default case if needed
+                    break;
                 }
               },
               items: <BottomNavigationBarItem>[
@@ -447,8 +404,8 @@ class _HomePageState extends State<HomePage> {
                   label: 'Home',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.search),
-                  label: 'Search',
+                  icon: Icon(Icons.comment_rounded),
+                  label: 'Communty',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.person),
@@ -460,5 +417,57 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+}
+//هذا الكلاس الي جوة يسوي كارد بي رابط وعنوان ولوجو  للصفخة الرئيسة
+
+class CategoryAccordion extends StatelessWidget {
+  final String title;
+  final String url;
+  final IconData icon;
+
+  CategoryAccordion(
+      {required this.title, required this.url, required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.grey[300],
+            borderRadius: BorderRadius.circular(5),
+          ),
+          padding: EdgeInsets.all(1),
+          child: IconButton(
+            onPressed: () {
+              launchURL(url);
+            },
+            icon: Icon(
+              icon,
+              color: Colors.black,
+              size: 140,
+            ),
+          ),
+        ),
+        Padding(padding: EdgeInsets.all(3)),
+        Text(
+          title,
+          style: GoogleFonts.cairoPlay(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+
+  void launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'الرابط لا يعمل  $url';
+    }
   }
 }

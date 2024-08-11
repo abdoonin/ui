@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui/homepage.dart';
+import 'package:CTE/homepage.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -14,7 +14,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      title: 'CTE',
+      home: HomePage(
+        course: null,
+      ),
     );
   }
 }
