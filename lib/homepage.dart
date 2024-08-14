@@ -8,7 +8,6 @@ import 'package:CTE/GuidesPage.dart';
 import 'package:CTE/ProgramsPage.dart';
 import 'package:CTE/ProjectsPage.dart';
 import 'package:CTE/profile.dart';
-import 'package:getwidget/getwidget.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -356,6 +355,25 @@ class _HomePageState extends State<HomePage> {
                     url:
                         'https://www.sfahat.com/article/42/%D8%A7%D9%84%D8%A3%D9%85%D9%86-%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A-cybersecurity-%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D9%87-%D8%A3%D8%B7%D8%B1-%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D8%A7%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81-%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%A7%D8%AA%D8%A8%D9%87%D8%A7',
                     icon: Icons.whatshot_rounded),
+                CategoryAccordion(
+                    title: ' المعالج   ',
+                    url: 'https://aws.amazon.com/ar/what-is/cpu/',
+                    icon: Icons.account_tree_rounded),
+                CategoryAccordion(
+                    title: ' قواعد البيانات   ',
+                    url:
+                        'https://www.oracle.com/bh-ar/database/what-is-database/',
+                    icon: Icons.data_object_rounded),
+                CategoryAccordion(
+                    title: ' شبكة الحاسوب   ',
+                    url:
+                        'https://ar.wikipedia.org/wiki/%D8%B4%D8%A8%D9%83%D8%A9_%D8%AD%D8%A7%D8%B3%D9%88%D8%A8',
+                    icon: Icons.wifi_tethering_rounded),
+                CategoryAccordion(
+                    title: ' اساسيات الحاسوب   ',
+                    url:
+                        'https://harmash.com/tutorials/computer-fundamentals/functions-and-advantages',
+                    icon: Icons.desktop_windows_rounded),
                 CategoryAccordion(
                     title: ' المعالج   ',
                     url: 'https://aws.amazon.com/ar/what-is/cpu/',

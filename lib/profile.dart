@@ -14,6 +14,11 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            
+            const CircleAvatar(
+              backgroundImage: AssetImage('assets/about.jpg'),
+              radius: 100,
+            ),
             const SizedBox(height: 20),
             const Text(
               'Abdoonin',
